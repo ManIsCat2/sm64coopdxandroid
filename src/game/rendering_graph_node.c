@@ -380,6 +380,13 @@ static void geo_process_master_list_sub(struct GraphNodeMasterList *node) {
     for (s32 i = 0; i < GFX_NUM_MASTER_LISTS; i++) {
         if ((currList = node->listHeads[i]) != NULL) {
             gDPSetRenderMode(gDisplayListHead++, modeList->modes[i], mode2List->modes[i]);
+
+
+            if (mClearGeoWord != 0) gSPClearGeometryMode(gDisplayListHead++, mClearGeoWord);
+            if (mSetGeoWord != 0) gSPSetGeometryMode(gDisplayListHead++, mSetGeoWord);
+            if (mGeoWord != 0) gSPClearGeometryMode(gDisplayListHead++, mGeoWord);
+            if (mGeoWord2 != 0) gSPSetGeometryMode(gDisplayListHead++, mGeoWord2);
+
             while (currList != NULL) {
                 detect_and_skip_mtx_interpolation(&currList->transform, &currList->transformPrev);
                 if ((u32) gMtxTblSize < sizeof(gMtxTbl) / sizeof(gMtxTbl[0])) {

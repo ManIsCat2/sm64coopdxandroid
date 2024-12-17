@@ -3348,6 +3348,36 @@ FIRST_PERSON_MARIO_HEAD_POS = 120
 FIRST_PERSON_MARIO_HEAD_POS_SHORT = 60
 
 --- @type integer
+G_CULL_BACK = 0x00000400
+
+--- @type integer
+G_CULL_BOTH = 0x00000600
+
+--- @type integer
+G_CULL_FRONT = 0x00000200
+
+--- @type integer
+G_FOG = 0x00010000
+
+--- @type integer
+G_LIGHTING = 0x00020000
+
+--- @type integer
+G_SHADE = 0x00000004
+
+--- @type integer
+G_SHADING_SMOOTH = 0x00200000
+
+--- @type integer
+G_TEXTURE_GEN = 0x00040000
+
+--- @type integer
+G_TEXTURE_GEN_LINEAR = 0x00080000
+
+--- @type integer
+G_ZBUFFER = 0x00000001
+
+--- @type integer
 BACKGROUND_ABOVE_CLOUDS = 8
 
 --- @type integer

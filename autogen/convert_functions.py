@@ -321,6 +321,9 @@ manual_index_documentation = """
    - [log_to_console](#log_to_console)
    - [add_scroll_target](#add_scroll_target)
    - [collision_find_surface_on_ray](#collision_find_surface_on_ray)
+   - [gsSPClearGeometryMode](#gsSPClearGeometryMode)
+   - [gsSPSetGeometryMode](#gsSPSetGeometryMode)
+   - [gsSPGeometryMode](#gsSPGeometryMode)
 
 <br />
 
@@ -723,6 +726,75 @@ Shoots a raycast from `startX`, `startY`, and `startZ` in the direction of `dirX
 
 ### C Prototype
 `struct RayIntersectionInfo* collision_find_surface_on_ray(f32 startX, f32 startY, f32 startZ, f32 dirX, f32 dirY, f32 dirZ, f32 precision);`
+
+[:arrow_up_small:](#)
+
+<br />
+
+## [gsSPClearGeometryMode](#gsSPClearGeometryMode)
+
+Makes all displaylists clear the given Geometry Mode.
+
+### Lua Example
+`gsSPClearGeometryMode(G_TEXTURE_GEN)`
+
+### Parameters
+| Field | Type |
+| ----- | ---- |
+| word | `number` |
+
+### Returns
+- None
+
+### C Prototype
+`#define gsSPClearGeometryMode(word) gsSPGeometryMode((word),0)`
+
+[:arrow_up_small:](#)
+
+<br />
+
+## [gsSPSetGeometryMode](#gsSPSetGeometryMode)
+
+Makes all displaylists set the given Geometry Mode.
+
+### Lua Example
+`gsSPSetGeometryMode(G_TEXTURE_GEN)`
+
+### Parameters
+| Field | Type |
+| ----- | ---- |
+| word | `number` |
+
+### Returns
+- None
+
+### C Prototype
+`#define	gsSPSetGeometryMode(word)	gsSPGeometryMode(0,(word))`
+
+[:arrow_up_small:](#)
+
+<br />
+
+## [gsSPGeometryMode](#gsSPGeometryMode)
+
+Makes all displaylists clear and set the given Geometry Mode.
+
+### Lua Example
+`gsSPGeometryMode(G_ZBUFFER, G_TEXTURE_GEN)`
+
+### Parameters
+| Field | Type |
+| ----- | ---- |
+| c | `number` |
+| s | `number` |
+
+### Returns
+- None
+
+### C Prototype
+`#define gsSPGeometryMode(c, s)						
+	gsSPClearGeometryMode(c),					
+	gsSPSetGeometryMode(s)`
 
 [:arrow_up_small:](#)
 

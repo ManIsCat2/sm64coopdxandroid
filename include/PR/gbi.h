@@ -354,11 +354,11 @@
 #define G_SHADE			0x00000004	/* enable Gouraud interp */
 /* rest of low byte reserved for setup ucode */
 #ifdef	F3DEX_GBI_2
-# define G_TEXTURE_ENABLE	0x00000000	/* Ignored               */
-# define G_SHADING_SMOOTH	0x00200000	/* flat or smooth shaded */
-# define G_CULL_FRONT		0x00000200
-# define G_CULL_BACK		0x00000400
-# define G_CULL_BOTH		0x00000600	/* To make code cleaner */
+#define G_TEXTURE_ENABLE	0x00000000	/* Ignored               */
+#define G_SHADING_SMOOTH	0x00200000	/* flat or smooth shaded */
+#define G_CULL_FRONT		0x00000200
+#define G_CULL_BACK		0x00000400
+#define G_CULL_BOTH		0x00000600	/* To make code cleaner */
 #else
 # define G_TEXTURE_ENABLE	0x00000002	/* Microcode use only */
 # define G_SHADING_SMOOTH	0x00000200	/* flat or smooth shaded */
@@ -372,17 +372,17 @@
 #define G_TEXTURE_GEN_LINEAR	0x00080000
 #define G_LOD			0x00100000	/* NOT IMPLEMENTED */
 #if	(defined(F3DEX_GBI)||defined(F3DLP_GBI))
-# define G_CLIPPING		0x00800000
+#define G_CLIPPING		0x00800000
 #else
 # define G_CLIPPING		0x00000000
 #endif
 
 #ifdef _LANGUAGE_ASSEMBLY
-#define G_FOG_H			(G_FOG/0x10000)
-#define G_LIGHTING_H		(G_LIGHTING/0x10000)
-#define G_TEXTURE_GEN_H		(G_TEXTURE_GEN/0x10000)
-#define G_TEXTURE_GEN_LINEAR_H	(G_TEXTURE_GEN_LINEAR/0x10000)
-#define G_LOD_H			(G_LOD/0x10000)	/* NOT IMPLEMENTED */
+# define G_FOG_H			(G_FOG/0x10000)
+# define G_LIGHTING_H		(G_LIGHTING/0x10000)
+# define G_TEXTURE_GEN_H		(G_TEXTURE_GEN/0x10000)
+# define G_TEXTURE_GEN_LINEAR_H	(G_TEXTURE_GEN_LINEAR/0x10000)
+# define G_LOD_H			(G_LOD/0x10000)	/* NOT IMPLEMENTED */
 #if	(defined(F3DEX_GBI)||defined(F3DLP_GBI))
 #  define G_CLIPPING_H		(G_CLIPPING/0x10000)
 #endif

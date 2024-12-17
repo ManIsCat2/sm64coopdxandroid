@@ -21,6 +21,7 @@
 - [external.h](#externalh)
     - [enum DialogSound](#enum-DialogSound)
 - [first_person_cam.h](#first_person_camh)
+- [gbi.h](#gbih)
 - [geo_commands.h](#geo_commandsh)
 - [graph_node.h](#graph_nodeh)
 - [interaction.c](#interactionc)
@@ -1179,6 +1180,22 @@
 - FIRST_PERSON_DEFAULT_FOV
 - FIRST_PERSON_MARIO_HEAD_POS
 - FIRST_PERSON_MARIO_HEAD_POS_SHORT
+
+[:arrow_up_small:](#)
+
+<br />
+
+## [gbi.h](#gbi.h)
+- G_CULL_BACK
+- G_CULL_BOTH
+- G_CULL_FRONT
+- G_FOG
+- G_LIGHTING
+- G_SHADE
+- G_SHADING_SMOOTH
+- G_TEXTURE_GEN
+- G_TEXTURE_GEN_LINEAR
+- G_ZBUFFER
 
 [:arrow_up_small:](#)
 

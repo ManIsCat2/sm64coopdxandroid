@@ -389,6 +389,22 @@ function collision_find_surface_on_ray(startX, startY, startZ, dirX, dirY, dirZ,
     -- ...
 end
 
+--- @param word number The Geometry mode to clear.
+function gsSPClearGeometryMode(word)
+    -- ...
+end
+
+--- @param word number The Geometry mode to set.
+function gsSPSetGeometryMode(word)
+    -- ...
+end
+
+--- @param c number The Geometry mode to clear.
+--- @param s number The Geometry mode to set.
+function gsSPGeometryMode(c, s)
+    -- ...
+end
+
 --- @param contents ExclamationBoxContent[]
 --- Sets the contents that the exclamation box spawns.
 --- A single content has 5 keys: `id`, `unused`, `firstByte`, `model`, and `behavior`.

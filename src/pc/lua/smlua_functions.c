@@ -946,6 +946,54 @@ int smlua_func_collision_find_surface_on_ray(lua_State* L) {
     return 1;
 }
 
+  /////////////
+ // sp & dp //
+/////////////
+
+u32 mClearGeoWord = 0x00000000;
+
+int smlua_func_gsSPClearGeometryMode(lua_State* L) {
+    if(!smlua_functions_valid_param_count(L, 1)) { return 0; }
+
+    u32 word = smlua_to_number(L, 1);
+    if (!gSmLuaConvertSuccess) { LOG_LUA("gsSPClearGeometryMode: Failed to convert parameter 1"); return 0; }
+
+    mClearGeoWord = word;
+
+    return 1;
+}
+
+u32 mSetGeoWord = 0x00000000;
+
+int smlua_func_gsSPSetGeometryMode(lua_State* L) {
+    if(!smlua_functions_valid_param_count(L, 1)) { return 0; }
+
+    u32 word = smlua_to_number(L, 1);
+    if (!gSmLuaConvertSuccess) { LOG_LUA("gsSPSetGeometryMode: Failed to convert parameter 1"); return 0; }
+
+    mSetGeoWord = word;
+
+    return 1;
+}
+
+u32 mGeoWord = 0x00000000;
+u32 mGeoWord2 = 0x00000000;
+
+int smlua_func_gsSPGeometryMode(lua_State* L) {
+    if(!smlua_functions_valid_param_count(L, 2)) { return 0; }
+
+    u32 word = smlua_to_number(L, 1);
+    if (!gSmLuaConvertSuccess) { LOG_LUA("gsSPGeometryMode: Failed to convert parameter 1"); return 0; }
+    u32 word2 = smlua_to_number(L, 2);
+    if (!gSmLuaConvertSuccess) { LOG_LUA("gsSPGeometryMode: Failed to convert parameter 2"); return 0; }
+
+    mGeoWord = word;
+    mGeoWord2 = word2;
+
+    return 1;
+}
+
+
   //////////
  // bind //
 //////////
@@ -975,4 +1023,7 @@ void smlua_bind_functions(void) {
     smlua_bind_function(L, "log_to_console", smlua_func_log_to_console);
     smlua_bind_function(L, "add_scroll_target", smlua_func_add_scroll_target);
     smlua_bind_function(L, "collision_find_surface_on_ray", smlua_func_collision_find_surface_on_ray);
+    smlua_bind_function(L, "gsSPClearGeometryMode", smlua_func_gsSPClearGeometryMode);
+    smlua_bind_function(L, "gsSPSetGeometryMode", smlua_func_gsSPSetGeometryMode);
+    smlua_bind_function(L, "gsSPGeometryMode", smlua_func_gsSPGeometryMode);
 }

@@ -10,6 +10,7 @@ out_filename_defs = 'autogen/lua_definitions/constants.lua'
 in_files = [
     "include/types.h",
     "include/sm64.h",
+    "include/PR/gbi.h",
     "src/pc/lua/smlua_hooks.h",
     "src/game/area.h",
     "src/game/camera.h",
@@ -53,11 +54,13 @@ exclude_constants = {
     "*": [ "^MAXCONTROLLERS$", "^AREA_[^T].*", "^AREA_T[HTO]", "^CONT_ERR.*", "^READ_MASK$", "^SIGN_RANGE$", ],
     "src/game/obj_behaviors.c": [ "^o$" ],
     "src/pc/djui/djui_console.h": [ "CONSOLE_MAX_TMP_BUFFER" ],
-    "src/pc/lua/smlua_hooks.h": [ "MAX_HOOKED_MOD_MENU_ELEMENTS" ]
+    "src/pc/lua/smlua_hooks.h": [ "MAX_HOOKED_MOD_MENU_ELEMENTS" ],
+    "include/PR/gbi.h": [ "G_CULLDL" ],
 }
 
 include_constants = {
     "include/geo_commands.h": [ "BACKGROUND" ],
+    "include/PR/gbi.h": [ "G_CULL", "G_LIGHT", "G_SHAD", "G_TEXTURE_GEN", "G_FOG", "G_ZBUFFER" ],
     "include/level_commands.h": [ "WARP_CHECKPOINT", "WARP_NO_CHECKPOINT" ],
     "src/audio/external.h": [ "SEQ_PLAYER", "DS_" ],
     "src/pc/mods/mod_storage.h": [ "MAX_KEYS", "MAX_KEY_VALUE_LENGTH" ]

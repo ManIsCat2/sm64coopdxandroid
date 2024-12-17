@@ -718,6 +718,11 @@ void network_shutdown(bool sendLeaving, bool exiting, bool popup, bool reconnect
     gLuaVolumeSfx = 127;
     gLuaVolumeEnv = 127;
 
+    mClearGeoWord = 0;
+    mSetGeoWord = 0;
+    mGeoWord = 0;
+    mGeoWord2 = 0;
+
     struct Controller* cnt = gPlayer1Controller;
     cnt->rawStickX = 0;
     cnt->rawStickY = 0;
